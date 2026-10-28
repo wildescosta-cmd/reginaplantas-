@@ -1,0 +1,140 @@
+# Query: 
+# ContextLines: 1
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regina e as plantas - Guia de Plantas & Cuidados</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo"><i class="fa-solid fa-leaf"></i> <span>regina e as plantas</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#plantas">Nossas Plantas</a></li>
+                    <li><a href="#simulador">Simulador de Rega</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <section id="inicio" class="hero-section">
+        <div class="hero-content">
+            <h1>Aprenda a Cultivar as Suas Próprias Plantas</h1>
+            <p>Descubra os segredos para cuidar do Bálsamo, Manjericão e Erva-cidreira.</p>
+            <a href="#plantas" class="btn-primary">Começar a Explorar</a>
+        </div>
+    </section>
+    <section id="plantas" class="plants-section">
+        <h2>Guia de Cultivo e Utilidades</h2>
+        <div class="plants-grid">
+            <!-- Bálsamo -->
+            <div class="plant-card" data-plant="balsamo">
+                <div class="plant-image bg-balsamo"><span class="plant-badge">Suculenta</span></div>
+                <div class="plant-info">
+                    <h3>Bálsamo</h3>
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="switchTab(event, 'balsamo', 'cuidados')">Cuidados</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'balsamo', 'utilidades')">Utilizações</button>
+                    </div>
+                    <div class="tab-content id-cuidados active">
+                        <h4>Como cultivar:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-sun"></i> <strong>Luz:</strong> Sol direto.</li>
+                            <li><i class="fa-solid fa-droplet"></i> <strong>Rega:</strong> Moderada.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content id-utilidades">
+                        <h4>Para que é utilizado:</h4>
+                        <p>Propriedades cicatrizantes e anti-inflamatórias.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Manjericão -->
+            <div class="plant-card" data-plant="manjericao">
+                <div class="plant-image bg-manjericao"><span class="plant-badge">Aromática</span></div>
+                <div class="plant-info">
+                    <h3>Manjericão</h3>
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="switchTab(event, 'manjericao', 'cuidados')">Cuidados</button>
+
+                        <button class="tab-btn" onclick="switchTab(event, 'manjericao', 'utilidades')">Utilizações</button>
+                    </div>
+                    <div class="tab-content id-cuidados active">
+                        <h4>Como cultivar:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-sun"></i> <strong>Luz:</strong> Sol direto.</li>
+                            <li><i class="fa-solid fa-droplet"></i> <strong>Rega:</strong> Frequente.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content id-utilidades">
+                        <h4>Para que é utilizado:</h4>
+                        <p>Uso na culinária, molhos e possui antioxidantes.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Erva-cidreira -->
+            <div class="plant-card" data-plant="cidreira">
+                <div class="plant-image bg-cidreira"><span class="plant-badge">Chás</span></div>
+                <div class="plant-info">
+                    <h3>Erva-cidreira</h3>
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" onclick="switchTab(event, 'cidreira', 'cuidados')">Cuidados</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'cidreira', 'utilidades')">Utilizações</button>
+                    </div>
+                    <div class="tab-content id-cuidados active">
+                        <h4>Como cultivar:</h4>
+                        <ul>
+                            <li><i class="fa-solid fa-sun"></i> <strong>Luz:</strong> Sombra parcial.</li>
+                            <li><i class="fa-solid fa-droplet"></i> <strong>Rega:</strong> Regular.</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content id-utilidades">
+                        <h4>Para que é utilizado:</h4>
+                        <p>Efeito calmante, combate ansiedade e insónia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="simulador" class="simulator-section">
+        <div class="simulator-container">
+            <h2>Assistente de Rega Rápido</h2>
+            <div class="form-group">
+                <select id="select-planta">
+                    <option value="">-- Escolha uma planta --</option>
+                    <option value="balsamo">Bálsamo</option>
+                    <option value="manjericao">Manjericão</option>
+                    <option value="cidreira">Erva-cidreira</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <select id="select-solo">
+                    <option value="">-- Estado do solo --</option>
+                    <option value="seco">Seca</option>
+                    <option value="humido">Húmida</option>
+                    <option value="encharcado">Lama</option>
+                </select>
+            </div>
+            <button id="btn-verificar" class="btn-secondary">Verificar</button>
+            <div id="resultado-simulador" class="result-box hidden"></div>
+        </div>
+    </section>
+    <form id="contact-form">
+        <input type="text" id="nome" placeholder="Nome" required>
+Página 3 de 6
+This is for informational purposes only. For medical advice or diagnosis, consult a professional. AI responses may include mistakes.
+        <input type="email" id="email" placeholder="E-mail" required>
+        <textarea id="mensagem" placeholder="Dúvida" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+    <footer><p>&copy; 2026 Cultivo Verde.</p></footer>
+    <script src="script.js"></script>
+</body>
+</html

@@ -1,0 +1,27 @@
+ { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; scroll-behavior: smooth; }
+:root { --primary-color: #2e7d32; --primary-dark: #1b5e20; --text-dark: #263238; --text-light: #ffffff; }
+body { background-color: #fafafa; color: var(--text-dark); line-height: 1.6; }
+header { background-color: var(--text-light); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.nav-container { display: flex; justify-content: space-between; padding: 20px; max-width: 1200px; margin: 0 auto; }
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { text-decoration: none; color: var(--text-dark); font-weight: 500; }
+.hero-section { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero.jpg') no-repeat center/cover; height: 60vh; display: flex; align-items: center; justify-content: center; color: var(--text-light); text-align: center; }
+.plants-section { max-width: 1200px; margin: 60px auto; padding: 20px; }
+.plants-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.plant-card { background: var(--text-light); border-radius: 15px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.plant-image { height: 150px; }
+.bg-balsamo { background: #3b5334; } .bg-manjericao { background: #476a6f; } .bg-cidreira { background: #7a6130; }
+.plant-info { padding: 20px; }
+.tab-buttons { display: flex; gap: 10px; margin-bottom: 15px; }
+.tab-btn { background: none; border: none; cursor: pointer; padding: 5px; }
+.tab-btn.active { color: var(--primary-color); border-bottom: 2px solid var(--primary-color); }
+.tab-content { display: none; } .tab-content.active { display: block; }
+.simulator-section { background-color: #f1f8e9; padding: 40px 20px; }
+.simulator-container { max-width: 500px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 10px; }
+.form-group { margin-bottom: 15px; }
+select, input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+.btn-secondary { width: 100%; background: var(--primary-color); color: #fff; border: none; padding: 12px; cursor: pointer; }
+.result-box { margin-top: 15px; padding: 10px; border-radius: 5px; text-align: center; }
+.success { background: #e8f5e9; color: #2e7d32; } .danger { background: #ffebee; color: #c62828; } .warning { background: #fff3e0; color: #e65100; }
+.hidden { display: none; }
+footer { background: var(--text-dark); color: #aaa; text-align: center; padding: 20px; margin-top: 40px; }
